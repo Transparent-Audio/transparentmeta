@@ -30,7 +30,7 @@ def encode_hexadecimal_string_to_bytes(hex_string: str) -> bytes:
 def decode_bytes_to_hexadecimal_string(
     byte_data: bytes, character_encoding: str
 ) -> str:
-    """Deocodes bytes to a hexadecimal string.
+    """Decodes bytes to a hexadecimal string.
 
     Args:
         byte_data (bytes): The bytes to encode.

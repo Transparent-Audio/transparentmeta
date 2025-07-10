@@ -1,7 +1,8 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 # Copyright (c) 2025 Valerio Velardo / Transparent Audio
 
-"""Logging configuration for the transparentmeta library.
+"""
+Logging configuration for the transparentmeta library.
 
 This module provides a utility function to configure a default logger
 for the library. In most cases, users of the library should configure their
