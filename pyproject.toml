@@ -1,0 +1,95 @@
+[tool.poetry]
+name = "transparentmeta"
+version = "0.0.1"
+description = "Python library to write, read, and verify transparency metadata in audio files for AI transparency compliance."
+authors = ["Valerio Velardo <valerio@transparentaudio.ai>"]
+readme = "README.md"
+license = "GPL-3.0-or-later"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+cryptography = "44.0.1"
+mutagen = "1.47.0"
+pydantic = "2.10.6"
+
+[tool.poetry.group.dev.dependencies]
+black = "25.1.0"
+coverage = "7.6.12"
+interrogate = "1.7.0"
+isort = "6.0.0"
+mypy = "1.15.0"
+pre-commit = "4.1.0"
+pylint = "3.3.4"
+pytest = "8.3.4"
+pytest-cov = "6.0.0"
+pytest-mock = "3.14.0"
+setuptools = "80.9.0"
+
+[tool.black]
+line-length = 79
+exclude = '''
+/(
+	\.git
+| _build
+)/
+'''
+
+[tool.isort]
+profile = "black"
+known_third_party = []
+skip_glob = []
+line_length = 79
+
+[tool.mypy]
+strict = false
+namespace_packages = true
+show_error_codes = true
+
+[[tool.mypy.overrides]]
+module = []
+ignore_missing_imports = true
+
+[tool.pylint.messages_control]
+disable = ["too-few-public-methods", "too-many-public-methods"]
+ignored-modules = []
+good-names = "2D,i"
+
+[tool.interrogate]
+ignore-init-method = true
+ignore-init-module = true
+ignore-magic = true
+ignore-semiprivate = true
+ignore-private = true
+ignore-property-decorators = true
+ignore-module = false
+ignore-nested-functions = true
+ignore-nested-classes = true
+ignore-setters = true
+fail-under = 100
+exclude = ["tests/*"]
+ignore-regex = ["^get$", "^mock_.*", ".*BaseClass.*"]
+verbose = 1
+quiet = false
+whitelist-regex = []
+color = true
+
+[tool.pytest.ini_options]
+log_cli = true
+log_cli_level = "INFO"
+filterwarnings = ""
+addopts = "--cov-fail-under=100"
+
+[tool.coverage.run]
+parallel = true
+omit = []
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    'if __name__ == "__main__":',
+    "if TYPE_CHECKING:",
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

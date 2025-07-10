@@ -1,0 +1,40 @@
+# ──────────────────────────────────────────────────────────────
+# GitHub Actions Workflow: CI
+# Purpose: Run formatting, linting, typing, and tests
+# Triggered on: Push to any branch and PRs to dev/main
+# ──────────────────────────────────────────────────────────────
+
+name: CI
+
+on:
+  push:
+    branches:
+      - '**'  # All branches
+  pull_request:
+    branches:
+      - dev
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repo code
+      - uses: actions/checkout@v4
+
+      # Set up Python 3.12
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # Install Poetry
+      - uses: abatilo/actions-poetry@v2
+
+      # Install dev dependencies
+      - name: Install dependencies
+        run: make install_dev
+
+      # Run the full quality checklist
+      - name: Run quality checks
+        run: make checklist
