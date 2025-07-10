@@ -22,7 +22,7 @@ def configure_logging(level=logging.INFO):
 
     Args:
         level (int): The logging level (e.g., logging.INFO, logging.DEBUG).
-                     Defaults to logging.INFO.
+            Defaults to logging.INFO.
 
     Notes:
         - If the logger already has handlers, no changes are made.
