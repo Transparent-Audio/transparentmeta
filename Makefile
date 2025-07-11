@@ -15,6 +15,7 @@ install:
 .PHONY: install_dev
 install_dev:
 	poetry install
+	poetry run pre-commit install
 
 .PHONY: interrogate
 interrogate:
