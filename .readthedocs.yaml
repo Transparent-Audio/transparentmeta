@@ -11,9 +11,3 @@ sphinx:
 python:
   install:
     - requirements: docs/requirements.txt
-
-versions:
-  only:
-    - "main"
-    - "v*"
-    - "latest"
