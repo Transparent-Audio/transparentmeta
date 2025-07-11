@@ -1,5 +1,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-# Copyright (c) 2025 Valerio Velardo / Transparent Audio
+# Copyright (c) 2025 Transparent Audio
+# Author: Valerio Velardo - valerio@transparentaudio.ai
 
 """
 Exposes the main interfaces of the transparentmeta SDK for direct import from

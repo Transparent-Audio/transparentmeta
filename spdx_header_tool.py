@@ -23,7 +23,8 @@ import argparse
 from pathlib import Path
 
 SPDX_HEADER = "# SPDX-License-Identifier: GPL-3.0-or-later"
-COPYRIGHT_HEADER = "# Copyright (c) 2025 Valerio Velardo / Transparent Audio"
+COPYRIGHT_HEADER = "# Copyright (c) 2025 Transparent Audio"
+AUTHOR_HEADER = "# Author: Valerio Velardo - valerio@transparentaudio.ai"
 THIS_SCRIPT_NAME = Path(__file__).name
 
 
@@ -45,7 +46,7 @@ def insert_headers(file_path: Path):
     if any(SPDX_HEADER in line for line in lines):
         return
 
-    new_lines = [SPDX_HEADER + "\n", COPYRIGHT_HEADER + "\n", "\n"] + lines
+    new_lines = [SPDX_HEADER + "\n", COPYRIGHT_HEADER + "\n", AUTHOR_HEADER + "\n", "\n"] + lines
 
     with file_path.open("w", encoding="utf-8") as f:
         f.writelines(new_lines)
@@ -59,7 +60,7 @@ def remove_headers(file_path: Path):
     # Remove SPDX and copyright lines
     cleaned = []
     for line in lines:
-        if line.strip() in (SPDX_HEADER, COPYRIGHT_HEADER):
+        if line.strip() in (SPDX_HEADER, COPYRIGHT_HEADER, AUTHOR_HEADER):
             continue
         cleaned.append(line)
 

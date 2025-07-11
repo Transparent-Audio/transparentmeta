@@ -1,5 +1,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
-# Copyright (c) 2025 Valerio Velardo / Transparent Audio
+# Copyright (c) 2025 Transparent Audio
+# Author: Valerio Velardo - valerio@transparentaudio.ai
 
 from mutagen.id3 import ID3
 from mutagen.mp3 import MP3
