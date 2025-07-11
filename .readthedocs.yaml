@@ -9,9 +9,9 @@ build:
     pre_install:
       - pip install poetry
     install:
-      - poetry install --with docs
+      - make install_dev
     post_install:
-      - poetry run sphinx-build -b html docs/ docs/_build/html
+      - make build_docs
 
 sphinx:
   configuration: docs/conf.py
