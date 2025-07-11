@@ -53,3 +53,11 @@ loc:
 .PHONY: loc_with_tests
 loc_with_tests:
 	cloc . --include-lang=Python
+
+.PHONY: start_docs
+start_docs:
+	poetry run sphinx-quickstart docs
+
+.PHONY: build_docs
+build_docs:
+	poetry run sphinx-build -b html docs docs/_build/html
