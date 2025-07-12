@@ -30,8 +30,9 @@ jobs:
       - name: Run quality checks
         run: make checklist
 
-      # ────────────────────────────────────────────────
-      # 🐍 Publish to PyPI (uncomment once ready)
-      # ────────────────────────────────────────────────
-      # - name: Publish to PyPI
-      #   run: poetry publish --build --username __token__ --password ${{ secrets.PYPI_API_TOKEN }}
+      - name: Configure TestPyPI
+        run: poetry config repositories.test-pypi https://test.pypi.org/legacy/
+
+      - name: Publish to TestPyPI
+        run: poetry publish --build -r test-pypi --username __token__ --password ${{ secrets.TEST_PYPI_API_TOKEN }}
+
