@@ -1,7 +1,7 @@
 # TransparentMeta – Example Scripts
 
 This folder contains four minimal scripts to help you get started with the
-[TransparentMeta](https://transparentaudio.ai) SDK. These examples will onboard
+TransparentMeta SDK. These examples will onboard
 you quickly by walking through the full process of logging, key generation,
 metadata writing, and verification. You can use them as a reference for 
 integrating TransparentMeta into your own applications.
