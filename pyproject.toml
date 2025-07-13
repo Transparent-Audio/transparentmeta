@@ -29,15 +29,6 @@ sphinx-rtd-theme = "3.0.2"
 sphinx-autodoc-typehints = "3.2.0"
 myst-parser = "4.0.1"
 
-[tool.poetry.extras]
-docs = [
-  "sphinx",
-  "sphinx-rtd-theme",
-  "sphinx-autodoc-typehints",
-  "myst-parser"
-]
-
-
 [tool.black]
 line-length = 79
 exclude = '''

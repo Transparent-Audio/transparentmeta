@@ -10,5 +10,4 @@ sphinx:
 
 python:
   install:
-    - method: poetry
-      extras: ["docs"]
+    - requirements: docs/requirements.txt
