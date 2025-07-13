@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "transparentmeta"
-version = "0.0.8"
+version = "0.0.9"
 description = "Python library to write, read, and verify transparency metadata in audio files for AI transparency compliance."
 authors = ["Valerio Velardo <valerio@transparentaudio.ai>"]
 readme = "README.md"
@@ -28,6 +28,15 @@ sphinx = "8.2.3"
 sphinx-rtd-theme = "3.0.2"
 sphinx-autodoc-typehints = "3.2.0"
 myst-parser = "4.0.1"
+
+[tool.poetry.extras]
+docs = [
+  "sphinx",
+  "sphinx-rtd-theme",
+  "sphinx-autodoc-typehints",
+  "myst-parser"
+]
+
 
 [tool.black]
 line-length = 79
