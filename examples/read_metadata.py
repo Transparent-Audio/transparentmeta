@@ -33,7 +33,7 @@ from transparentmeta.sdk import build_transparent_metadata_reader
 
 # Path to the MP3/WAV file you want to inspect
 # ➤ Replace with your own test file path
-audio_path = Path("/home/valerio/Music/22.mp3")
+audio_path = Path("/home/valerio/Music/sound3.WavE")
 
 # Path to the public key PEM file used to verify the signature
 public_key_path = Path("public_key.pem")

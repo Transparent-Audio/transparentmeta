@@ -61,3 +61,11 @@ start_docs:
 .PHONY: build_docs
 build_docs:
 	poetry run sphinx-build -b html docs docs/_build/html
+
+.PHONY: generate_api_docs
+generate_api_docs:
+	sphinx-apidoc -f -o docs/api/ transparentmeta/
+
+.PHONY: tree
+tree:
+	tree -I '__pycache__|.venv|.git'

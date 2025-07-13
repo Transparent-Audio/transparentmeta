@@ -8,9 +8,9 @@ from pathlib import Path
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'TransparentMeta'
-copyright = '2025, Transparent Audio'
-author = 'Transparent Audio'
+project = "TransparentMeta"
+copyright = "2025, Transparent Audio"
+author = "Transparent Audio"
 
 # Load version from pyproject.toml
 pyproject_path = Path(__file__).parent.parent / "pyproject.toml"
@@ -30,22 +30,19 @@ extensions = [
     "myst_parser"
 ]
 
-# Include __init__
 autodoc_default_options = {
     "members": True,
-    "undoc-members": True,
+    "undoc-members": False,
     "private-members": False,
     "special-members": "__init__",
     "show-inheritance": True,
 }
 
-templates_path = ['_templates']
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
-
-
+templates_path = ["_templates"]
+exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'sphinx_rtd_theme'
-html_static_path = ['_static']
+html_theme = "sphinx_rtd_theme"
+html_static_path = ["_static"]

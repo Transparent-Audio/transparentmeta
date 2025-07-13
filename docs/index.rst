@@ -18,5 +18,5 @@ documentation for details.
    overview
    tutorial_signing
 
-   api/crypto
+   api/modules
 
