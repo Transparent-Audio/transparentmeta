@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "transparentmeta"
-version = "0.0.4"
+version = "0.0.5"
 description = "Python library to write, read, and verify transparency metadata in audio files for AI transparency compliance."
 authors = ["Valerio Velardo <valerio@transparentaudio.ai>"]
 readme = "README.md"
