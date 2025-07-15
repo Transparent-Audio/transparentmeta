@@ -39,7 +39,7 @@ from transparentmeta.sdk import build_transparent_metadata_writer
 
 # Output file to write metadata to
 # ➤ Change this to the path of the MP3 you want to tag
-audio_path = Path("/home/valerio/Music/sound3.WavE")
+audio_path = Path("/home/valerio/Music/22.mp3")
 
 # Location of your private key file
 # ➤ This key should match the public key used to verify metadata
@@ -69,7 +69,11 @@ def main():
         "user_id": "user_67890",
         "private_key_id": "dummy_private_key_id",
         "additional_info": {
-            "attribution": {"lyrics": "John Doe", "composer": "Jane Smith"}
+            "attribution": {
+                "lyrics": "John Doe",
+                "composer": "Jane Smith",
+                "singer": "HAL 9000",
+            }
         },
     }
 
