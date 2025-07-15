@@ -21,7 +21,7 @@
 ## 📦 Installation
 
 ```bash
-pip install -i https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple transparentmeta```
+pip install -i https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple transparentmeta
 ```
 Note: This allows installation of dependencies from the official PyPI while 
 fetching the TransparentMeta package from Test PyPI. Once launched, 
@@ -44,7 +44,7 @@ make install_dev
 - Check the `/examples` folder for quick usage examples. Start by reading the 
 [README.md file](examples/README.md) inside the folder.
 - For a more thorough introduction to TransparentMeta watch the video 
-  tutorials on [YouTube](https://www.youtube.com/@transparentaudio).
+  tutorials on [YouTube](https://www.youtube.com/watch?v=hJqjb_6wGsw&list=PL-a9rWjvfqdRqYS1E6oJlC39TOz_N3yDJ&index=1&ab_channel=TransparentAudio).
 
 ## 📖 Documentation 
 Full documentation on [Read the Docs](https://transparentmeta.readthedocs.io/en/stable/)
@@ -60,6 +60,8 @@ Full documentation on [Read the Docs](https://transparentmeta.readthedocs.io/en/
 TransparentMeta relies on the following core libraries:
 - [mutagen](https://mutagen.readthedocs.io/en/latest/) – for reading and writing audio metadata (MP3, WAV, etc.)
 - [cryptography](https://cryptography.io/en/latest/) – for generating and verifying digital signatures 
+- [pydantic](https://docs.pydantic.dev/latest/) – for data validation and 
+  data structures
 
 You can find all dependencies in `pyproject.toml`.
 
@@ -74,7 +76,8 @@ TransparentMeta supports Python 3.12 and above. Ensure you have a compatible
 version installed.
 
 ## 📝 License 
-This project is licensed under GPL-3.0. See the [LICENSE](LICENSE) file for details.
+This project is licensed under GPL-3.0 or later. See the [LICENSE](LICENSE) 
+file for details.
 
 ## 📬 Contact 
 If you have any questions, issues, or feature requests, please write to 
