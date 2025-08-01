@@ -2,7 +2,7 @@
 # Copyright (c) 2025 Transparent Audio
 # Author: Valerio Velardo - valerio@transparentaudio.ai
 
-from datetime import datetime
+from datetime import datetime, timezone
 
 import pytest
 from pydantic import ValidationError
@@ -14,7 +14,7 @@ def test_that_metadata_object_with_valid_args_is_created_successfully():
     metadata = Metadata(
         company="Transparent Audio",
         model="v2.1",
-        created_at=datetime.utcnow(),
+        created_at=datetime.now(timezone.utc),
         ai_usage_level=AIUsageLevel.AI_ASSISTED,
         content_id="12345",
         user_id="user_67890",
@@ -76,7 +76,7 @@ def test_metadata_optional_fields_omitted_without_error():
     metadata = Metadata(
         company="Transparent Audio",
         model="v2.1",
-        created_at=datetime.utcnow(),
+        created_at=datetime.now(timezone.utc),
         ai_usage_level=AIUsageLevel.AI_GENERATED,
         content_id="12345",
         user_id="user_67890",
@@ -97,7 +97,7 @@ def test_metadata_ai_usage_level_accepts_valid_enum(valid_usage_level):
     metadata = Metadata(
         company="Transparent Audio",
         model="v2.1",
-        created_at=datetime.utcnow(),
+        created_at=datetime.now(timezone.utc),
         ai_usage_level=valid_usage_level,
         content_id="12345",
         user_id="user_67890",
@@ -111,7 +111,7 @@ def test_metadata_invalid_ai_usage_level_enum_raises_validation_error():
         Metadata(
             company="Transparent Audio",
             model="v2.1",
-            created_at=datetime.utcnow(),
+            created_at=datetime.now(timezone.utc),
             ai_usage_level="unsupported_ai_level",  # Invalid value
             content_id="12345",
             user_id="user_67890",
