@@ -1,21 +1,21 @@
-# TransparentMeta – Example Scripts
+# TransparentMeta – Demonstration Scripts
 
-This folder contains four minimal scripts to help you get started with the
-TransparentMeta SDK. These examples will onboard
-you quickly by walking through the full process of logging, key generation,
-metadata writing, and verification. You can use them as a reference for 
-integrating TransparentMeta into your own applications.
+This folder contains four demonstration scripts to help you get started 
+with the TransparentMeta SDK. 
 
-👉 **Study and run the scripts in order for best results.**
+⚠️These are not entry‑point scripts. They are code examples showcasing the 
+library’s main functionality. You can copy and reuse this code in your 
+application when integrating TransparentMeta. 
+
+These examples will help you onboard quickly by walking through the 
+workflow for logging, key generation, metadata writing, and verification.
 
 ---
 
 ## ✅ Installation
 
-Before running the examples, install the project dependencies from the root
-of the repo.
-
-Use one of the following:
+Before running any example, install the project dependencies from the root of 
+the repository using one of the following commands:
 
 ```bash
 make install        # for runtime-only dependencies
@@ -34,89 +34,41 @@ cd examples
 
 ---
 
-## 🚀 Script Overview (in order)
+## 🧪 Test the full workflow
 
-### 1. `configure_logging.py`
-
-Set up logging for TransparentMeta.
-
-- Enables SDK logging (default: `INFO`, optionally `DEBUG`).
-- Use the TransparentMeta custom logger **only** if your app doesn’t 
-  already configure logging.
-- If you have your logger, logs will bubble up through Python's logging system.
-
-Run:
-
-```bash
-python examples/configure_logging.py
-```
-
----
-
-### 2. `generate_key_pair.py`
-
-Generate a new Ed25519 private/public key pair.
-
-- Saves `private_key.pem` and `public_key.pem` in the current directory.
-- Used to sign (private key) and verify (public key) audio metadata.
-
-Run:
-
-```bash
-python examples/generate_key_pair.py
-```
-
----
-
-### 3. `write_metadata.py`
-
-Embed signed transparency metadata into an audio file.
-
-- Uses `private_key.pem` to sign metadata.
-- Writes metadata and signature into an MP3 or WAV file.
-- Edit the `metadata` dictionary in the script to customize.
-
-Run:
-
-```bash
-python examples/write_metadata.py
-```
-
----
-
-### 4. `read_metadata.py`
-
-Read and verify metadata from an audio file.
-
-- Uses `public_key.pem` to verify the embedded signature.
-- Prints decoded metadata and verification result.
-
-Run:
-
-```bash
-python examples/read_metadata.py
-```
-
----
-
-## 🧪 Test the full flow
-
-Use a single MP3 or WAV file to test the full workflow:
+You can run the scripts in any order, but we recommend following this sequence 
+as it reflects typical usage:
 
 1. Generate keys  
 2. Write metadata  
 3. Read and verify metadata  
 
-You’ll confirm that signing and verification work end to end.
+---
+
+## 🚀 Demonstration Scripts
+
+### `configure_logging.py`
+
+Demonstrates how to set up logging for TransparentMeta.
 
 ---
 
-## 📁 File paths
+### `generate_key_pair.py`
 
-The scripts use hardcoded file paths like:
+Shows how to generate and save an Ed25519 private/public key pair for 
+cryptographic signing.
 
-```python
-audio_path = Path("/home/valerio/Music/22.mp3")
-```
+---
 
-Be sure to update those paths to match your local test files.
+### `write_metadata.py`
+
+Demonstrates embedding transparency metadata into an audio file.
+
+---
+
+### `read_metadata.py`
+
+Shows how to read and verifying metadata from an audio file.
+
+---
+
