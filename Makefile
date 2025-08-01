@@ -10,7 +10,7 @@ clean:
 
 .PHONY: install
 install:
-	poetry install --no-dev
+	poetry install --without dev
 
 .PHONY: install_dev
 install_dev:
