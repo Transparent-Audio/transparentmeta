@@ -31,6 +31,7 @@ content with transparent metadata simply and effectively.
 
 ## 📦 Installation
 
+### From PyPi
 ```bash
 pip install -i https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple transparentmeta
 ```
@@ -39,12 +40,12 @@ fetching the TransparentMeta package from Test PyPI. Once launched,
 TransparentMeta will be available for installation from the official PyPI 
 repository.
 
+### From Source
 Or, you can install directly from the repository. This project uses 
-[Poetry](https://python-poetry.org/) for dependency management. So, you'll have 
-to install Poetry before installing the package locally.
+[Poetry](https://python-poetry.org/) for dependency management. You’ll need to 
+install Poetry first.
 
-To install TransparentMeta from the repo run:
-
+To install TransparentMeta from source code run:
 ```bash
 git clone https://github.com/Transparent-Audio/transparentmeta.git
 cd transparentmeta
@@ -55,6 +56,10 @@ To install in development mode, after cloning the repository, run:
 ```bash
 make install_dev
 ```
+
+`make install` and `make install_dev` wrap relevant Poetry commands. They can 
+be found along with other useful commands in the [Makefile](Makefile).
+
 
 ## 📚 Getting Started 
 - Check the `/examples` folder for quick usage examples. Start by reading the 
@@ -87,7 +92,7 @@ To run tests, linting, and type checks, use:
 make checklist
 ```
 
-## Python version 
+## 🐍 Python version 
 TransparentMeta supports Python 3.12 and above. Ensure you have a compatible 
 version installed.
 
