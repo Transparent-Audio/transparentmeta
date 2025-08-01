@@ -1,15 +1,26 @@
 # TransparentMeta
 
-[**TransparentMeta**](https://github.com/Transparent-Audio/transparentmeta) is an open-source Python library developed by 
-[Transparent Audio](https://www.transparentaudio.ai/) for adding, verifying, and reading metadata labels in audio files to ensure compliance with AI transparency laws such as the **EU AI Act** and the **California AI Transparency Act**. It supports cryptographic signing, robust file validation, and a modular SDK to help generative AI companies label AI-generated audio content effectively.
+[TransparentMeta](https://github.com/Transparent-Audio/transparentmeta) is an 
+open-source Python library developed by 
+[Transparent Audio](https://www.transparentaudio.ai/). 
+
+It allows users to add and verify cryptographically signed metadata in 
+audio files. 
+
+TransparentMeta helps generative AI companies comply with AI transparency laws, 
+such as the *EU AI Act* and the *California AI Transparency Act*. 
+
+By using cryptographic signing, robust file 
+validation, and a modular SDK, users can label AI-generated audio 
+content with transparent metadata simply and effectively.
 
 ## 🚀 Features
 
 - Add cryptographically signed transparency metadata to MP3 and WAV files  
 - Read and verify metadata to detect AI-generated audio  
 - Key pair generation and signature verification built-in  
-- Simple Python SDK for easy integration
-- 100% tested with extensive unit and integration coverage  
+- Simple Python SDK for easy integration in your application
+- 100% test coverage via unit and integration tests  
 
 ## 🔧 Use Cases
 
@@ -28,9 +39,14 @@ fetching the TransparentMeta package from Test PyPI. Once launched,
 TransparentMeta will be available for installation from the official PyPI 
 repository.
 
-Or, install directly from the repository:
+Or, you can install directly from the repository. This project uses 
+[Poetry](https://python-poetry.org/) for dependency management. So, you'll have 
+to install Poetry before installing the package locally.
+
+To install TransparentMeta from the repo run:
+
 ```bash
-git clone https://github.com/your-org/transparentmeta.git
+git clone https://github.com/Transparent-Audio/transparentmeta.git
 cd transparentmeta
 make install
 ```
@@ -47,7 +63,7 @@ make install_dev
   tutorials on [YouTube](https://www.youtube.com/watch?v=hJqjb_6wGsw&list=PL-a9rWjvfqdRqYS1E6oJlC39TOz_N3yDJ&index=1&ab_channel=TransparentAudio).
 
 ## 📖 Documentation 
-Full documentation on [Read the Docs](https://transparentmeta.readthedocs.io/en/stable/)
+Check full documentation on [Read the Docs](https://transparentmeta.readthedocs.io/en/stable/)
 
 ## 📂 Project Structure 
 - `transparentmeta/` - Main library code
@@ -81,5 +97,5 @@ file for details.
 
 ## 📬 Contact 
 If you have any questions, issues, or feature requests, please write to 
-Transparent Audio's founder Valerio Velardo at valerio@transparentaudio.ai.
+Transparent Audio's CTO Valerio Velardo at valerio@transparentaudio.ai.
 
