@@ -16,10 +16,13 @@ from mutagen.wave import WAVE
 from transparentmeta.request.exceptions import (
     InvalidAudioFileError,
     NoWritePermissionsError,
+    WAVTooLargeError,
 )
 from transparentmeta.use_case.constants import SUPPORTED_AUDIO_FORMATS
 from transparentmeta.use_case.exceptions import UnsupportedAudioFormatError
-from transparentmeta.utils.file_utils import get_file_extension
+from transparentmeta.utils.file_utils import get_file_extension, get_file_size
+
+MAX_WAV_FILE_SIZE = 2**32 - 1  # 4GB in bytes
 
 
 def validate_file_exists(filepath: Path) -> Path:
@@ -78,6 +81,27 @@ def validate_audio_file_is_functioning(filepath: Path) -> Path:
             WAVE(filepath)
     except Exception as err:
         raise InvalidAudioFileError(filepath, str(err)) from err
+    return filepath
+
+
+def validate_wav_file_is_not_too_large(filepath: Path) -> Path:
+    """Validates that the WAV file is not larger than the maximum allowed size.
+
+    Args:
+        filepath (Path): The path to the file.
+
+    Raises:
+        WAVTooLargeError: If the WAV file is larger than the maximum allowed
+            size.
+
+    Returns:
+        filepath (Path): The validated filepath.
+    """
+    extension = get_file_extension(filepath)
+    if extension in ["wav", "wave"]:
+        size = get_file_size(filepath)
+        if size > MAX_WAV_FILE_SIZE:
+            raise WAVTooLargeError(filepath, MAX_WAV_FILE_SIZE, size)
     return filepath
 
 

@@ -7,12 +7,14 @@ import pytest
 from transparentmeta.request.exceptions import (
     InvalidAudioFileError,
     NoWritePermissionsError,
+    WAVTooLargeError,
 )
 from transparentmeta.request.file_validators import (
     validate_audio_file_is_functioning,
     validate_audio_format_is_supported,
     validate_file_exists,
     validate_file_has_write_permissions,
+    validate_wav_file_is_not_too_large,
 )
 from transparentmeta.use_case.exceptions import UnsupportedAudioFormatError
 
@@ -90,3 +92,33 @@ def test_validate_file_has_write_permissions_valid(temp_wav):
 def test_validate_file_has_write_permissions_invalid(unwritable_file):
     with pytest.raises(NoWritePermissionsError):
         validate_file_has_write_permissions(unwritable_file)
+
+
+def test_validate_wav_file_within_limit_returns_path(temp_wav, monkeypatch):
+    monkeypatch.setattr(
+        "transparentmeta.request.file_validators.MAX_WAV_FILE_SIZE", 1000
+    )
+    validated_path = validate_wav_file_is_not_too_large(temp_wav)
+    assert validated_path == temp_wav
+
+
+def test_validate_wav_file_too_large_raises(temp_wav, monkeypatch):
+    monkeypatch.setattr(
+        "transparentmeta.request.file_validators.MAX_WAV_FILE_SIZE", 1
+    )
+
+    with pytest.raises(WAVTooLargeError) as exception:
+        validate_wav_file_is_not_too_large(temp_wav)
+
+    exc = exception.value
+    assert temp_wav == exc.filepath
+    assert exc.file_size == temp_wav.stat().st_size
+    assert exc.max_size == 1
+    assert "exceeds the maximum size" in str(exc)
+
+
+def test_validate_wav_file_is_not_too_large_with_non_wav_file(temp_mp3):
+    validated_path = validate_wav_file_is_not_too_large(temp_mp3)
+    assert (
+        validated_path == temp_mp3
+    )  # Non-WAV files should pass without size check
