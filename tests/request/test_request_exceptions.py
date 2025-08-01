@@ -7,6 +7,7 @@ from pathlib import Path
 from transparentmeta.request.exceptions import (
     InvalidAudioFileError,
     NoWritePermissionsError,
+    WAVTooLargeError,
 )
 
 
@@ -33,3 +34,20 @@ def test_no_write_permissions_error():
     assert error.filepath == dummy_path
     assert "File is not writable" in str(error)
     assert str(dummy_path) in str(error)
+
+
+def test_wav_too_large_error():
+    dummy_path = Path("/fake/path/audio.wav")
+    max_size = 10485760  # 10 MB
+    file_size = 20971520  # 20 MB
+
+    error = WAVTooLargeError(dummy_path, max_size, file_size)
+
+    assert isinstance(error, WAVTooLargeError)
+    assert error.filepath == dummy_path
+    assert error.max_size == max_size
+    assert error.file_size == file_size
+    assert "exceeds the maximum size" in str(error)
+    assert str(dummy_path) in str(error)
+    assert f"maximum size of {max_size} bytes" in str(error)
+    assert f"File size: {file_size} bytes" in str(error)

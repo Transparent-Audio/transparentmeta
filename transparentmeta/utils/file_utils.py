@@ -22,3 +22,17 @@ def get_file_extension(filepath: Path) -> str:
         str: The file extension in lowercase without the leading dot.
     """
     return filepath.suffix.lower().lstrip(".")
+
+
+def get_file_size(filepath: Path) -> int:
+    """Gets the size of the file at the given path.
+
+    Args:
+        filepath (Path): The path to the file.
+
+    Returns:
+        int: The size of the file in bytes.
+    """
+    if not filepath.exists():
+        return 0
+    return filepath.stat().st_size
