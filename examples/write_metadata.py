@@ -3,47 +3,32 @@
 # Author: Valerio Velardo - valerio@transparentaudio.ai
 
 """
-Example script: Write metadata to an audio file using transparentmeta.
+Example script: Write metadata to an audio file using TransparentMeta.
 
-This script shows how to embed structured transparency metadata into an MP3
-file using the TransparentMeta SDK. The metadata is cryptographically signed
-using a private Ed25519 key.
+This script shows how to embed structured transparency metadata into a test
+audio file using the TransparentMeta SDK. The metadata is cryptographically
+signed using a private Ed25519 key.
 
-It:
-1. Loads an Ed25519 private key from a PEM file.
-2. Builds a TransparentMetadataWriter instance.
-3. Creates a metadata dictionary with usage details and attribution.
-4. Writes the metadata and signature into the target MP3 file.
+In this script, you'll learn how to:
+1. Load an Ed25519 private key from a PEM file.
+2. Build a TransparentMetadataWriter instance.
+3. Create a metadata dictionary with usage details and attribution.
+4. Write the metadata and signature into the target MP3 file.
 
-This metadata can later be read and verified using the corresponding public key
-with the `read_metadata.py` example.
-
----
-
-Try modifying:
-- The `metadata` fields to experiment with your own data.
-- The `audio_path` to test with different audio files.
-- The `private_key_path` to point to other key versions.
+This metadata can later be read and verified using the corresponding public
+key. You can learn how to do that from the `read_metadata.py` example.
 """
 
 import logging
 from datetime import datetime, timezone
-from pathlib import Path
 
+from examples.config import private_key_path, test_audio_path
 from transparentmeta.crypto.key_management import (
     load_private_key_from_pem_file,
 )
 from transparentmeta.entity.metadata import AIUsageLevel
 from transparentmeta.logger_config import configure_logging
 from transparentmeta.sdk import build_transparent_metadata_writer
-
-# Output file to write metadata to
-# ➤ Change this to the path of the MP3 you want to tag
-audio_path = Path("/home/valerio/Music/22.mp3")
-
-# Location of your private key file
-# ➤ This key should match the public key used to verify metadata
-private_key_path = Path("private_key.pem")
 
 
 def main():
@@ -77,8 +62,8 @@ def main():
         },
     }
 
-    # Write the metadata to the file (with embedded signature)
-    transparent_metadata_writer.write(audio_path, metadata)
+    # Write the metadata to the file (with cryptographic signature)
+    transparent_metadata_writer.write(test_audio_path, metadata)
 
 
 if __name__ == "__main__":

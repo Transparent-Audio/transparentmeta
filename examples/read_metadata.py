@@ -4,39 +4,25 @@
 
 """
 Example script: Read and verify metadata from an audio file using
-transparentmeta.
+TransparentMeta.
 
 This script demonstrates how to read transparency metadata embedded in an audio
-file using the transparentmeta SDK. It also verifies the signature using the
+file using the TransparentMeta SDK. It also verifies the signature using the
 public Ed25519 key that corresponds to the private key used for signing.
 
-It:
-1. Loads a public key from a PEM file.
-2. Builds a TransparentMetadataReader instance with the relative factory
+In this script, you'll learn how to:
+1. Load a public key from a PEM file.
+2. Build a TransparentMetadataReader instance with the relative factory
 function.
-3. Reads and verifies metadata from the specified audio file.
-4. Prints the result, including any errors or the decoded metadata.
-
----
-
-Try modifying:
-- The `audio_path` to test with different files.
-- The `public_key_path` to load alternate key versions.
+3. Read and verify metadata from the specified audio file.
 """
 
 import logging
-from pathlib import Path
 
+from examples.config import public_key_path, test_audio_path
 from transparentmeta.crypto.key_management import load_public_key_from_pem_file
 from transparentmeta.logger_config import configure_logging
 from transparentmeta.sdk import build_transparent_metadata_reader
-
-# Path to the MP3/WAV file you want to inspect
-# ➤ Replace with your own test file path
-audio_path = Path("/home/valerio/Music/22.mp3")
-
-# Path to the public key PEM file used to verify the signature
-public_key_path = Path("public_key.pem")
 
 
 def main():
@@ -50,7 +36,7 @@ def main():
     transparent_metadata_reader = build_transparent_metadata_reader(public_key)
 
     # Read and verify metadata from the MP3 file
-    read_result = transparent_metadata_reader.read(audio_path)
+    read_result = transparent_metadata_reader.read(test_audio_path)
 
     # Print the result to the console
     print(read_result)

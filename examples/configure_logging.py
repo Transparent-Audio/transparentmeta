@@ -3,9 +3,7 @@
 # Author: Valerio Velardo - valerio@transparentaudio.ai
 
 """
-Example script: Configure logging for transparentmeta.
-
-This script shows how to activate transparentmeta's built-in logger
+This script shows how to activate TransparentMeta's built-in logger
 configuration, which enables logging output for all internal SDK
 operations.
 
@@ -17,11 +15,11 @@ By default:
 
 ---
 
-When to use this:
+When to use the TransparentMeta custom logger:
 - Use `configure_logging()` at the start of your script if you don't
   already have your own logger configuration.
 - If you're building an app or service with a centralized logging setup,
-  you don't need to call this — transparentmeta logs will bubble up
+  you don't need to call this — TransparentMeta logs will bubble up
   through the root logger.
 """
 
