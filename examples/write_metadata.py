@@ -27,7 +27,7 @@ Try modifying:
 """
 
 import logging
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 from transparentmeta.crypto.key_management import (
@@ -63,7 +63,7 @@ def main():
     metadata = {
         "company": "Transparent Audio",
         "model": "v2.1",
-        "created_at": datetime.utcnow(),
+        "created_at": datetime.now(timezone.utc),
         "ai_usage_level": AIUsageLevel.AI_ASSISTED,
         "content_id": "12345",
         "user_id": "user_67890",
