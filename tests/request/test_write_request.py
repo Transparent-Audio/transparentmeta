@@ -8,6 +8,7 @@ import pytest
 from pydantic import ValidationError
 
 from transparentmeta.entity.metadata import AIUsageLevel, Metadata
+from transparentmeta.request.exceptions import WAVTooLargeError
 from transparentmeta.request.write_request import WriteRequest
 
 
@@ -29,6 +30,10 @@ def mock_valid_file_validators(mocker):
     )
     mocker.patch(
         "transparentmeta.request.write_request.validate_file_has_write_permissions",
+        return_value=path,
+    )
+    mocker.patch(
+        "transparentmeta.request.write_request.validate_wav_file_is_not_too_large",
         return_value=path,
     )
 
@@ -93,6 +98,22 @@ def test_write_request_can_be_created_without_optional_fields(
 
     write_request = WriteRequest(**data)
     assert write_request.metadata.additional_info is None
+
+
+def test_write_request_raises_if_wav_file_is_too_large(
+    temp_wav, metadata_dict, monkeypatch
+):
+    monkeypatch.setattr(
+        "transparentmeta.request.file_validators.MAX_WAV_FILE_SIZE", 1
+    )
+
+    data = {
+        "filepath": temp_wav,
+        "metadata": metadata_dict,
+    }
+
+    with pytest.raises(WAVTooLargeError):
+        WriteRequest(**data)
 
 
 def test_write_request_can_be_converted_to_and_from_dictionary(

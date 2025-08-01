@@ -8,12 +8,13 @@ import pytest
 
 from transparentmeta.request.exceptions import (
     InvalidAudioFileError,
+    WAVTooLargeError,
 )
 from transparentmeta.request.read_request import ReadRequest
 from transparentmeta.use_case.exceptions import UnsupportedAudioFormatError
 
 
-def test_that_valid_audio_file_is_accepted_byread_request(temp_mp3: Path):
+def test_that_valid_audio_file_is_accepted_by_read_request(temp_mp3: Path):
     request = ReadRequest(filepath=temp_mp3)
     assert request.filepath == temp_mp3
 
@@ -40,3 +41,11 @@ def test_read_request_raises_if_not_a_functioning_audio_file(tmp_path: Path):
     fake_mp3.write_text("not real mp3 data")
     with pytest.raises(InvalidAudioFileError, match="Invalid audio file:"):
         ReadRequest(filepath=fake_mp3)
+
+
+def test_read_request_raises_if_wav_file_is_too_large(temp_wav, monkeypatch):
+    monkeypatch.setattr(
+        "transparentmeta.request.file_validators.MAX_WAV_FILE_SIZE", 1
+    )
+    with pytest.raises(WAVTooLargeError):
+        ReadRequest(filepath=temp_wav)

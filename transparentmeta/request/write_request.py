@@ -12,7 +12,8 @@ processing by the metadata write use case. It ensures that:
 2. The file is in a supported audio format,
 3. The file is a valid, functioning audio file,
 4. The file has write permissions,
-5. The metadata conforms to structured validation rules.
+5. The file is not too large (for WAV files),
+6. The metadata conforms to structured validation rules.
 """
 
 from pathlib import Path
@@ -25,6 +26,7 @@ from transparentmeta.request.file_validators import (
     validate_audio_format_is_supported,
     validate_file_exists,
     validate_file_has_write_permissions,
+    validate_wav_file_is_not_too_large,
 )
 
 
@@ -52,6 +54,7 @@ class WriteRequest(BaseModel):
         2. The file format is supported.
         3. The file is a valid audio file.
         4. The file has write permissions.
+        5. The file is not too large (for WAV files).
 
         Args:
             value (Path): The path to the file.
@@ -64,9 +67,11 @@ class WriteRequest(BaseModel):
             UnsupportedAudioFormatError: If the format is not supported.
             InvalidAudioFileError: If the file is not a functioning audio file.
             FilePermissionError: If the file is not writable.
+            WAVTooLargeError: If the WAV file exceeds the maximum size limit.
         """
         value = validate_file_exists(value)
         value = validate_audio_format_is_supported(value)
         value = validate_audio_file_is_functioning(value)
         value = validate_file_has_write_permissions(value)
+        value = validate_wav_file_is_not_too_large(value)
         return value
