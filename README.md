@@ -32,13 +32,11 @@ content with transparent metadata simply and effectively.
 ## 📦 Installation
 
 ### From PyPi
+Installing TransparentMeta from PyPI using pip is the recommended way:
+
 ```bash
-pip install -i https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple transparentmeta
+pip install transparentmeta
 ```
-Note: This allows installation of dependencies from the official PyPI while 
-fetching the TransparentMeta package from Test PyPI. Once launched, 
-TransparentMeta will be available for installation from the official PyPI 
-repository.
 
 ### From Source
 Or, you can install directly from the repository. This project uses 
@@ -62,10 +60,12 @@ be found along with other useful commands in the [Makefile](Makefile).
 
 
 ## 📚 Getting Started 
+- Check the [getting started guide]() in the documentation to pick up the 
+  basic functionality of TransparentMeta in 5 minutes.
 - Check the `/examples` folder for quick usage examples. Start by reading the 
 [README.md file](examples/README.md) inside the folder.
 - For a more thorough introduction to TransparentMeta watch the video 
-  tutorials on [YouTube](https://www.youtube.com/watch?v=hJqjb_6wGsw&list=PL-a9rWjvfqdRqYS1E6oJlC39TOz_N3yDJ&index=1&ab_channel=TransparentAudio).
+  tutorials on [YouTube](https://www.youtube.com/playlist?list=PL-a9rWjvfqdRqYS1E6oJlC39TOz_N3yDJ).
 
 ## 📖 Documentation 
 Check full documentation on [Read the Docs](https://transparentmeta.readthedocs.io/en/stable/)

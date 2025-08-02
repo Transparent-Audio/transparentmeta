@@ -16,7 +16,7 @@ cover most of the topics presented in this section and offer practical,
 hands-on demonstrations of how to integrate and use TransparentMeta 
 effectively.
 
-Watch the full video series here: [TransparentMeta YouTube Playlist](https://www.youtube.com/watch?v=hJqjb_6wGsw&list=PL-a9rWjvfqdRqYS1E6oJlC39TOz_N3yDJ&index=1&ab_channel=TransparentAudio)
+Watch the full video series here: [TransparentMeta YouTube Playlist](https://www.youtube.com/playlist?list=PL-a9rWjvfqdRqYS1E6oJlC39TOz_N3yDJ)
 
 ---
 
