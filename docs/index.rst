@@ -1,22 +1,65 @@
-.. TransparentMeta documentation master file, created by
-   sphinx-quickstart on Fri Jul 11 15:47:57 2025.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
-TransparentMeta documentation
+🎧 TransparentMeta documentation
 =============================
 
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
+Welcome to the official documentation for **TransparentMeta** 🥳
+
+TransparentMeta is the standard for transparent audio metadata compliance.
+
+This documentation will guide you through key concepts, usage examples,
+tutorials, and API references to help you integrate TransparentMeta
+seamlessly into your audio projects.
+
+
+Community & resources
+---------------------
+
+- 🗨️ Join the Transparent Audio Discord for real-time support and discussion:
+  `Discord Invite <https://discord.gg/pE9yRt7b9N>`_
+
+- 📦 Install or upgrade via our PyPI package
+  `PyPI Package <https://test.pypi.org/project/transparentmeta/>`_
+
+- 🐙 Browse the source code or contribute on GitHub:
+  `GitHub Repository <https://github.com/Transparent-Audio/transparentmeta/tree/main>`_
+
 
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: The basics
+   :hidden:
 
-   overview
-   tutorial_signing
+   the_basics/what_is_transparentmeta
+   the_basics/what_problem_does_it_solve
+   the_basics/who_should_use_it
+   the_basics/how_it_works
+   the_basics/guiding_principles
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Key concepts
+   :hidden:
+
+   key_concepts/audio_formats
+   key_concepts/metadata
+   key_concepts/crypto
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Learning
+   :hidden:
+
+   learning/installation
+   learning/getting_started
+   learning/examples
+   learning/tutorials
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Code reference
+   :hidden:
 
    api/modules
-
