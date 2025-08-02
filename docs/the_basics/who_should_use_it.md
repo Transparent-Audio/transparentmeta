@@ -8,3 +8,4 @@ comply with emerging AI regulations, and build trust with their users.
 If you work with synthetic voices, AI-composed music, deepfake audio, or any 
 form of generative audio content, TransparentMeta provides the tools you need 
 to embed verifiable, tamper-proof transparency metadata easily and reliably.
+

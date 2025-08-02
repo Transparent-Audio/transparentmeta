@@ -1,5 +1,5 @@
 🎧 TransparentMeta documentation
-=============================
+================================
 
 Welcome to the official documentation for **TransparentMeta** 🥳
 
@@ -34,6 +34,7 @@ Community & resources
    the_basics/who_should_use_it
    the_basics/how_it_works
    the_basics/guiding_principles
+   the_basics/faqs
 
 
 .. toctree::
