@@ -34,6 +34,8 @@ high-performance, and secure elliptic-curve signature scheme known for:
 TransparentMeta uses the [cryptography](https://cryptography.io/en/latest/) 
 library to implement Ed25519 signatures.
 
+You can learn more about Ed25519 [here]](https://ed25519.cr.yp.to/papers.html).
+
 ---
 
 ## How signatures work in TransparentMeta

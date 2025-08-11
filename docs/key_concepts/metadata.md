@@ -19,14 +19,37 @@ with AI transparency legislation for generative AI audio.
 
 Each instance of `Metadata` represents a snapshot of an audio asset’s origin
 and usage context, providing a standardized format for recording and sharing
-transparency details.
+transparency details. 
 
 ---
 
 ## Fields of the `Metadata` object
 
 The `Metadata` model includes the following fields, each capturing a specific
-aspect of the content’s generation and origin:
+aspect of the content generation and origin:
+
+```python
+metadata_dict = {
+    "company": "Transparent Audio",
+    "model": "v2.1",
+    "created_at": datetime.now(timezone.utc),
+    "ai_usage_level": AIUsageLevel.AI_ASSISTED,
+    "content_id": "12345",
+    "user_id": "user_67890",
+    "private_key_id": "dummy_private_key_id",
+    "additional_info": {
+        "attribution": {
+            "lyrics": "John Doe",
+            "composer": "Jane Smith",
+            "singer": "HAL 9000",
+        }
+    },
+}
+
+metadata = Metadata(**metadata_dict)
+```
+
+Let's check each field in detail:
 
 ### company  
 Type: `str`  

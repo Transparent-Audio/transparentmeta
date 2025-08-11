@@ -1,6 +1,6 @@
 # Guiding principles
 
-TransparentMeta follows a set of ddevelopment principles to ensure the 
+TransparentMeta follows a set of development principles to ensure the 
 solution is practical, trustworthy, and future-proof.
 
 ---

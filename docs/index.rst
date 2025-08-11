@@ -3,7 +3,8 @@
 
 Welcome to the official documentation for **TransparentMeta** 🥳
 
-TransparentMeta is the standard for transparent audio metadata compliance.
+TransparentMeta is the standard for compliance with AI audio transparency
+legislation with metadata.
 
 This documentation will guide you through key concepts, usage examples,
 tutorials, and API references to help you integrate TransparentMeta
@@ -19,7 +20,7 @@ Community & resources
 - 📦 Install or upgrade via our PyPI package
   `PyPI Package <https://test.pypi.org/project/transparentmeta/>`_
 
-- 🐙 Browse the source code or contribute on GitHub:
+- 🐙 Browse the source code and contribute via GitHub:
   `GitHub Repository <https://github.com/Transparent-Audio/transparentmeta/tree/main>`_
 
 

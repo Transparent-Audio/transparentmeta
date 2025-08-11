@@ -1,18 +1,22 @@
 # TransparentMeta
 
-[TransparentMeta](https://github.com/Transparent-Audio/transparentmeta) is an 
-open-source Python library developed by 
-[Transparent Audio](https://www.transparentaudio.ai/). 
+[TransparentMeta](https://github.com/Transparent-Audio/transparentmeta) is the standard for compliance with AI audio transparency
+legislation with metadata.
 
-It allows users to add and verify cryptographically signed metadata in 
+It's an open-source Python library developed by 
+[Transparent Audio](https://www.transparentaudio.ai/). It allows users to add and verify cryptographically signed metadata in 
 audio files. 
 
 TransparentMeta helps generative AI companies comply with AI transparency laws, 
-such as the *EU AI Act* and the *California AI Transparency Act*. 
-
-By using cryptographic signing, robust file 
+such as the *EU AI Act* and the *California AI Transparency Act*. By using cryptographic signing, robust file 
 validation, and a modular SDK, users can label AI-generated audio 
 content with transparent metadata simply and effectively.
+
+## 🗣️ Community
+
+- 🗨️ Join the [Transparent Audio Discord](https://discord.gg/pE9yRt7b9N) for real-time support and 
+  discussion
+- 🐛 If you discover bugs, please report them in the [GitHub issue tracker](https://github.com/Transparent-Audio/transparentmeta/issues)
 
 ## 🚀 Features
 
@@ -60,15 +64,17 @@ be found along with other useful commands in the [Makefile](Makefile).
 
 
 ## 📚 Getting Started 
-- Check the [getting started guide]() in the documentation to pick up the 
-  basic functionality of TransparentMeta in 5 minutes.
+- Check the [getting started guide](https://transparentmeta.readthedocs.io/en/stable/learning/getting_started.html) in the documentation to pick up the 
+  basic functionality of TransparentMeta in 5 minutes
 - Check the `/examples` folder for quick usage examples. Start by reading the 
-[README.md file](examples/README.md) inside the folder.
-- For a more thorough introduction to TransparentMeta watch the video 
-  tutorials on [YouTube](https://www.youtube.com/playlist?list=PL-a9rWjvfqdRqYS1E6oJlC39TOz_N3yDJ).
+[README.md file](examples/README.md) inside the folder
+- For a more thorough introduction to TransparentMeta, check the [tutorials](https://transparentmeta.readthedocs.io/en/stable/learning/tutorials.html) 
+  in the documentation
+- If you're a visual learner, watch the video
+  tutorials on [YouTube](https://www.youtube.com/playlist?list=PL-a9rWjvfqdRqYS1E6oJlC39TOz_N3yDJ)
 
 ## 📖 Documentation 
-Check full documentation on [Read the Docs](https://transparentmeta.readthedocs.io/en/stable/)
+Check full documentation on [Read the Docs](https://transparentmeta.readthedocs.io/en/stable/).
 
 ## 📂 Project Structure 
 - `transparentmeta/` - Main library code
@@ -100,7 +106,14 @@ version installed.
 This project is licensed under GPL-3.0 or later. See the [LICENSE](LICENSE) 
 file for details.
 
+## ✍️ Contribution
+While we don’t currently accept contributions, we plan to set up the 
+necessary infrastructure to do so in the future. If you’re interested in contributing, please contact us.
+
 ## 📬 Contact 
-If you have any questions, issues, or feature requests, please write to 
-Transparent Audio's CTO Valerio Velardo at valerio@transparentaudio.ai.
+If you have any pressing questions or issues, please 
+write to Transparent Audio's CTO Valerio Velardo at valerio@transparentaudio.ai.
+
+The best way to get support or suggest requests is by joining the [Transparent Audio Discord](https://discord.gg/pE9yRt7b9N)
+
 
