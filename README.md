@@ -14,8 +14,7 @@ content with transparent metadata simply and effectively.
 
 ## 🗣️ Community
 
-- 🗨️ Join the [Transparent Audio Discord](https://discord.gg/pE9yRt7b9N) for real-time support and 
-  discussion
+- 🗨️ Join the [Transparent Audio Discord](https://discord.gg/pE9yRt7b9N) for support and discussion
 - 🐛 If you discover bugs, please report them in the [GitHub issue tracker](https://github.com/Transparent-Audio/transparentmeta/issues)
 
 ## 🚀 Features
@@ -30,7 +29,7 @@ content with transparent metadata simply and effectively.
 
 - Speech synthesis and voice cloning labeling output with transparency metadata  
 - Generative AI music and sound effects tagging output with metadata and attribution  
-- Compliance with EU AI Act & California AI Transparency Act  
+- Help with compliance with *EU AI Act* & *California AI Transparency Act*  
 - Building trusted pipelines with verifiable audio provenance  
 
 ## 📦 Installation
@@ -114,6 +113,6 @@ necessary infrastructure to do so in the future. If you’re interested in contr
 If you have any pressing questions or issues, please 
 write to Transparent Audio's CTO Valerio Velardo at valerio@transparentaudio.ai.
 
-The best way to get support or suggest requests is by joining the [Transparent Audio Discord](https://discord.gg/pE9yRt7b9N)
+The best way to get support or request features is by joining the [Transparent Audio Discord](https://discord.gg/pE9yRt7b9N)
 
 
