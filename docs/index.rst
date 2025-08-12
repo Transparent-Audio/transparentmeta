@@ -14,14 +14,11 @@ seamlessly into your audio projects.
 Community & resources
 ---------------------
 
-- 🗨️ Join the Transparent Audio Discord for real-time support and discussion:
-  `Discord Invite <https://discord.gg/pE9yRt7b9N>`_
+- 🗨️ Join the Transparent Audio Discord for support and discussion: `Discord Invite <https://discord.gg/pE9yRt7b9N>`_
 
-- 📦 Install or upgrade via our PyPI package
-  `PyPI Package <https://test.pypi.org/project/transparentmeta/>`_
+- 📦 Install or upgrade via our `PyPI Package <https://pypi.org/project/transparentmeta/>`_
 
-- 🐙 Browse the source code and contribute via GitHub:
-  `GitHub Repository <https://github.com/Transparent-Audio/transparentmeta/tree/main>`_
+- 🐙 Browse the source code via the `GitHub Repository <https://github.com/Transparent-Audio/transparentmeta/tree/main>`_
 
 
 
